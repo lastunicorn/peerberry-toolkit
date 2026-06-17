@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="sources/PeerBerry.Toolkit.Demo/PeerBerry.Toolkit.Demo.csproj" />
+  <Project Path="sources/PeerBerry.Toolkit/PeerBerry.Toolkit.csproj" />
+</Solution>
