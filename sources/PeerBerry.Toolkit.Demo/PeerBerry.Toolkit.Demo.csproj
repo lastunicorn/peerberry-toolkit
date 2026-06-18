@@ -9,7 +9,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="ConsoleTools.Controls.Tables" Version="1.2.1" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\PeerBerry.Toolkit\PeerBerry.Toolkit.csproj" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="transactions.xlsx">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>
