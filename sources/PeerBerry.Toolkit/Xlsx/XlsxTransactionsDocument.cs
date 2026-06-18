@@ -77,6 +77,9 @@ internal class XlsxTransactionsDocument : IDisposable
 
 		foreach (Row row in rows)
 		{
+			if (row.Elements<Cell>().All(x => string.IsNullOrEmpty(x.InnerText)))
+				continue;
+
 			TransactionRecord transactionRecord = new()
 			{
 				Id = GetStringValue(FindCell(row, "A"), sharedStrings),
@@ -88,7 +91,7 @@ internal class XlsxTransactionsDocument : IDisposable
 				Country = GetStringValue(FindCell(row, "G"), sharedStrings),
 				LoanStatus = GetStringValue(FindCell(row, "H"), sharedStrings)
 			};
-			
+
 			section.Transactions.Add(transactionRecord);
 		}
 		
