@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using DustInTheWind.PeerBerry.Toolkit.Xlsx;
 
 namespace DustInTheWind.PeerBerry.Toolkit;
@@ -81,7 +80,17 @@ public class TransactionsDocument
 
 			using XlsxTransactionsDocument xlsxTransactionsDocument = new(stream);
 			cancellationToken.ThrowIfCancellationRequested();
-			transactionsDocument.TransactionsSection = xlsxTransactionsDocument.GetTransactionsSection();
+
+			XlsxTransactionsSheet transactionsSheet = xlsxTransactionsDocument.GetTransactionsSheet();
+			TransactionsSection section = new()
+			{
+				InvestorId = transactionsSheet.InvestorId
+			};
+
+			foreach (TransactionRecord transactionRecord in transactionsSheet)
+				section.Transactions.Add(transactionRecord);
+
+			transactionsDocument.TransactionsSection = section;
 
 			return Task.FromResult(transactionsDocument);
 		}
