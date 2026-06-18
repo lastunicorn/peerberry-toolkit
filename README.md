@@ -37,7 +37,7 @@ dotnet add package DustInTheWind.PeerBerry.Toolkit
 In PeerBerry web application:
 
 1. Log in.
-2. Selecte **Statement** item from the top-right menu.
+2. Select **Statement** item from the top-right menu.
 3. Scroll to **Transactions** section.
 4. Select the date interval you need.
 5. Click **Download transactions** button
@@ -49,9 +49,9 @@ You will get a .xlsx spreadsheet file containing transaction rows that can be pa
 ```csharp
 using DustInTheWind.PeerBerry.Toolkit;
 
-StatementDocument document = StatementDocument.LoadFromFile("statement.xlsx");
+TransactionsDocument document = TransactionsDocument.LoadFromFile("transactions.xlsx");
 
-foreach (TransactionRecord transaction in document)
+foreach (TransactionRecord transactionRecord in document.Transactions)
 {
 	...
 }
@@ -70,13 +70,13 @@ Each row is mapped to a `TransactionRecord` with the following columns:
 | `Currency` | `Currency` | `Currency`        |          |
 | `Loan Id` | `string` | `LoanId`        |                 |
 | `Country` | `string` | `Country`     |  |
-| `Loan Status` | `TransactionStatus` | `Loan Status` | |
+| `Loan Status` | `LoanStatus` | `Loan Status` | |
 
 ## Demo Project
 
 The repository includes a sample CLI project in `sources/PeerBerry.Toolkit.Demo` that demonstrates:
 
-- reading `statement.xlsx`
+- reading `transactions.xlsx`
 - printing parsed data.
 
 You can use this project as a reference implementation for your own importer/exporter tools.
