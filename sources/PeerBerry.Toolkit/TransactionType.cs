@@ -18,7 +18,7 @@ public sealed record class TransactionType
 		BuybackPrincipal,
 		Withdrawal
 	];
-	
+
 	public string Value { get; }
 
 	public TransactionType(string value)
