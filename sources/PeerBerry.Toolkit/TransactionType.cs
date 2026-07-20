@@ -2,6 +2,7 @@ namespace DustInTheWind.PeerBerry.Toolkit;
 
 public sealed record class TransactionType
 {
+	public static readonly TransactionType Deposit = new("DEPOSIT");
 	public static readonly TransactionType Investment = new("INVESTMENT");
 	public static readonly TransactionType RepaymentInterest = new("REPAYMENT_INTEREST");
 	public static readonly TransactionType RepaymentPrincipal = new("REPAYMENT_PRINCIPAL");
@@ -11,6 +12,7 @@ public sealed record class TransactionType
 
 	public static readonly IReadOnlyCollection<TransactionType> KnownValues =
 	[
+		Deposit,
 		Investment,
 		RepaymentInterest,
 		RepaymentPrincipal,
