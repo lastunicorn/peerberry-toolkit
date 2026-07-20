@@ -1,0 +1,1 @@
+[bugfix] Date column parsing fixed. (It was wrongfully returning year 1900)

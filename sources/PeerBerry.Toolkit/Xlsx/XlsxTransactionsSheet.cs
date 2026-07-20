@@ -72,10 +72,22 @@ internal class XlsxTransactionsSheet : IEnumerable<TransactionRecord>
 		return cell.InnerText;
 	}
 
-	private static DateTime GetDateValue(Cell cell)
+	private DateTime GetDateValue(Cell cell)
 	{
 		if (cell == null || string.IsNullOrEmpty(cell.InnerText))
 			return default;
+
+		if (cell.DataType?.Value == CellValues.SharedString)
+		{
+			int index = int.Parse(cell.InnerText);
+			string text = index < sharedStrings.Length
+				? sharedStrings[index]
+				: null;
+
+			return text == null
+				? default
+				: DateTime.ParseExact(text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+		}
 
 		double oaDate = double.Parse(cell.InnerText, CultureInfo.InvariantCulture);
 		return DateTime.FromOADate(oaDate);
