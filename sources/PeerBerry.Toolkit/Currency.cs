@@ -1,4 +1,4 @@
-namespace DustInTheWind.Mintos.Toolkit;
+namespace DustInTheWind.PeerBerry.Toolkit;
 
 /// <summary>
 /// Value object that represents a transaction currency (ISO 4217 currency code).

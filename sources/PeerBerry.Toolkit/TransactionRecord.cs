@@ -1,5 +1,3 @@
-using DustInTheWind.Mintos.Toolkit;
-
 namespace DustInTheWind.PeerBerry.Toolkit;
 
 public class TransactionRecord
