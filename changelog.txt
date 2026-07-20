@@ -1,6 +1,11 @@
 PeerBerry Toolkit
 ================================================================================
 
+v1.4.0
+--------------------------------------------------------------------------------
+[bugfix] Fixed namespaces. (Wrong Mintos namespaces were previously used)
+
+
 v1.3.0
 --------------------------------------------------------------------------------
 [new   ] Added new value for a transaction type: Deposit  

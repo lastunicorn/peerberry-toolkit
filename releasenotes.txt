@@ -1,1 +1,1 @@
-[new   ] Added new value for a transaction type: Deposit
+[bugfix] Fixed namespaces. (Wrong Mintos namespaces were previously used)
